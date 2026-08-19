@@ -1,0 +1,25 @@
+Aed and MainWindow are the main logic classes, but LCDScreen and audioPrompt have the most visual changes
+Excluded always updating elements like the LCDScreen timer, ECG, Battery, etc.
+
+functions listed in diagrams:
+
+press() - pressing the button arrow points to on GUI
+selfTest() - Aed performs a self test (checks if battery and electrodes are good, and if it was forced to fail)
+setText() - QLabel object
+setPrompt() - set text but for LCDScreen
+checkLED() - checks if LED illuminating/deilluminating conditions have been met. 
+attachPads() - calls AED version of function
+padsAttached() - triggers analysis mode and updates prompts accordingly
+analyse() - checks what state heart is in, then advises whether to shock or not
+checkCPR() - function called every 3 seconds during CPR. checks if depth is deep enough and suggests deeper if not enough
+endCPR() - stops CPR, called 15 seconds after CPR begin. disables timers and CPR related widgets
+ 
+objects listed in diagrams:
+User - user and actor, interacts with Aed
+Buttons - GUI elements
+LCDScreen/AudioPrompt - label/label like widgets
+Led - small circles as graphic
+MainWindow - the main window, handles logic that aed cannot handle on its own (ex: CPR)
+Aed - device, handles logic for program
+electrodeComboBox - listed as electrodes in code, input for if electrodes are plugged in
+depthSlider - input for depth of compression
