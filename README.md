@@ -18,7 +18,7 @@ A real unit speaks its prompts. Here they are text only. The code keeps track
 of which prompt is current so each one would be announced once, but the speaker
 was never implemented.
 
-Demo video: https://www.youtube.com/watch?v=-ysMmeA1TFk
+Demo video, recorded by me: https://www.youtube.com/watch?v=-ysMmeA1TFk
 
 ## My contribution
 
