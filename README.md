@@ -4,15 +4,30 @@ A simulation of an Automated External Defibrillator, written in C++ with Qt.
 Group project for COMP 3004 (Object-Oriented Software Engineering) at Carleton
 University, Fall 2023.
 
-The simulator covers the device workflow: power-on self test, electrode
-placement, ECG rhythm display, shock delivery, CPR prompting, and battery drain
-across uses. Prompts are shown on the LCD screen and played as audio.
+The simulator takes the device through a full use: power on and self test, pad
+type, electrode placement, ECG analysis, shock delivery and CPR coaching, with
+the battery draining as it goes. The prompts run on the LCD screen, from "CHECK
+RESPOSIVENESS." and "ATTACH DEFIB PADS TO PATIENT'S BARE CHEST." through "SHOCK
+ADVISED." and a three second countdown to "START CPR." and "PUSH HARDER."
 
-Demo video made by myself: https://www.youtube.com/watch?v=-ysMmeA1TFk
+Five rhythms can be set from the panel: healthy, ventricular fibrillation,
+ventricular tachycardia, asystole and PEA. Only vFib and vTach are shockable,
+and the rest get "NO SHOCK ADVISED." The ECG trace is drawn with QCustomPlot.
+
+Demo video: https://www.youtube.com/watch?v=-ysMmeA1TFk
+
+## My contribution
+
+Team of five. Mine:
+
+- LCDScreen, and all the visual and audio prompts
+- The CPR, patient, shock, LED, electrode and self test widgets, and the
+  functionality behind them
+- The sequence diagrams in `Sequence Diagrams/`, one per use case
+
+The full team breakdown is at the bottom.
 
 ## Building
-
-Requires Qt 5 and a C++ compiler.
 
 ```
 cd QTcode/AED
@@ -21,12 +36,13 @@ make
 ./AED
 ```
 
-Or open `QTcode/AED/AED.pro` in Qt Creator and build from there.
+Or open `QTcode/AED/AED.pro` in Qt Creator.
 
 ## Repository layout
 
 ```
-QTcode/AED/               Qt source and image assets
+QTcode/AED/               Qt sources and images: aed, battery, ecg, lcdscreen,
+                          mainwindow, and a bundled copy of QCustomPlot
 Sequence Diagrams/        One diagram per use case, with an explanation file
 UML.pdf                   Class diagram
 aed_state.pdf             Device state diagram
