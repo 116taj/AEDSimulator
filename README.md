@@ -14,13 +14,17 @@ Five rhythms can be set from the panel: healthy, ventricular fibrillation,
 ventricular tachycardia, asystole and PEA. Only vFib and vTach are shockable,
 and the rest get "NO SHOCK ADVISED." The ECG trace is drawn with QCustomPlot.
 
+A real unit speaks its prompts. Here they are text only. The code keeps track
+of which prompt is current so each one would be announced once, but the speaker
+was never implemented.
+
 Demo video: https://www.youtube.com/watch?v=-ysMmeA1TFk
 
 ## My contribution
 
 Team of five. Mine:
 
-- LCDScreen, and all the visual and audio prompts
+- LCDScreen, and every prompt in the workflow
 - The CPR, patient, shock, LED, electrode and self test widgets, and the
   functionality behind them
 - The sequence diagrams in `Sequence Diagrams/`, one per use case
@@ -28,6 +32,8 @@ Team of five. Mine:
 The full team breakdown is at the bottom.
 
 ## Building
+
+Needs Qt and a C++ compiler.
 
 ```
 cd QTcode/AED
